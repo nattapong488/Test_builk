@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game-24</title>
+    <div class="input-number">
+        <div>
+            <label for="input-1">ตัวเลขที่ 1</label>
+            <input type="number" id="input-1" max="9" min="1" oninput="Input1(this.value)">
+        </div>
+        <div>
+            <label for="input-2">ตัวเลขที่ 2</label>
+            <input type="number" id="input-2" max="9" min="1" oninput="Input2(this.value)">
+        </div>
+        <div>
+            <label for="input-3">ตัวเลขที่ 3</label>
+            <input type="number" id="input-3" max="9" min="1" oninput="Input3(this.value)">
+        </div>
+        <div>
+            <label for="input-4">ตัวเลขที่ 4</label>
+            <input type="number" id="input-4" max="9" min="1" oninput="Input4(this.value)">
+        </div>
+        <button id="btn" onclick="recieveInput()">คำนวณ</button>
+
+    </div>
+
+    <!-- show -->
+    <div id="show">
+        <p id="show-1">1</p>
+        <p id="show-2">2</p>
+        <p id="show-3">3</p>
+        <p id="show-4">4</p>
+        <p id="result"></p>
+    </div>
+    
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>

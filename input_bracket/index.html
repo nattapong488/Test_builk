@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>String Input</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box-input">
+      <fieldset>
+        <legend>string input</legend>
+        <label for="inputString" id="label-input">Input Bracket: </label>
+        <input type="text" id="inputString" name="inputString" maxlength="31" />
+        <button type="button" id="sendString">Send String</button>
+      </fieldset>
+    </div>
+
+    <div class="showMessage" id="message">
+      <ul id="style-list">
+        <li id="addOpen"></li>
+        <li id="addclose"></li>
+        <li id="openPosition"></li>
+        <li id="closePosition"></li>
+      </ul>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
