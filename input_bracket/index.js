@@ -80,11 +80,11 @@ sendString.addEventListener("click", function storeArr() {
           } else {
             countOpen++;
             if (textOpenPosition === "") {
-              textOpenPosition += `ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i} `;
+              textOpenPosition += `ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i+1} `;
             } else {
               textOpenPosition += ` และ ${i} `;
             }
-            console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i} `);
+            console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i+1} fix`);
           }
         }
       }
