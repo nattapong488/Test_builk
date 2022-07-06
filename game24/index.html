@@ -2,46 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Game-24</title>
-    <div class="input-number">
-        <div>
-            <label for="input-1">ตัวเลขที่ 1</label>
-            <input type="number" id="input-1" max="9" min="1" oninput="Input1(this.value)">
-        </div>
-        <div>
-            <label for="input-2">ตัวเลขที่ 2</label>
-            <input type="number" id="input-2" max="9" min="1" oninput="Input2(this.value)">
-        </div>
-        <div>
-            <label for="input-3">ตัวเลขที่ 3</label>
-            <input type="number" id="input-3" max="9" min="1" oninput="Input3(this.value)">
-        </div>
-        <div>
-            <label for="input-4">ตัวเลขที่ 4</label>
-            <input type="number" id="input-4" max="9" min="1" oninput="Input4(this.value)">
-        </div>
-        <button id="btn" onclick="recieveInput()">คำนวณ</button>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Game24</title>
 
-    </div>
-
-    <!-- show -->
-    <div id="show">
-        <p id="show-1">1</p>
-        <p id="show-2">2</p>
-        <p id="show-3">3</p>
-        <p id="show-4">4</p>
-        <p id="result"></p>
-    </div>
-    
-    <script src="index.js"></script>
 </head>
 
 <body>
+  <header>
+    <div class="px-3 py-2 bg-dark text-white mb-5 d-flex justify-content-center align-items-center" style="height:100px;">
+       <p class="pgame">Game<span class="s24">24</span></p>
+    </div>
+    
+  </header>
 
+  <main>
+    <!-- message -->
+    <div
+      class="rounded-5  show-operator d-flex justify-content-center w-50 ms-lg-5 ms-md-4 ms-sm-5 align-items-center"
+      style="height: 200px; background-color: #FFEB52;">
+      <p id="message" class="h-25 fs-1" style="color: #1F0303;"> </p>
+    </div>
+     
+    <form class="mt-5 mb-3">
+      <div class="mb-3 d-1">
+        <!-- <label for="exampleInputEmail1" class="form-label">Number 1
+        <input type="number" class="form-control form-check-inline " max="9" min="1" id="num1" oninput="store1(this.value)"> -->
+        <label for="exampleInputEmail1" class="form-label ">Number 1 </label>
+          <input type="number" class="form-check-input " max="9" min="1" id="num1" oninput="store1(this.value)">
+     </div>
+      <div class="mb-3 d-1">
+        <label for="exampleInputPassword1" class="form-label ">Number 2</label>
+        <input type="number" class="form-check-input" max="9" min="1" id="num2" oninput="store2(this.value)">
+      </div>
+      <div class="mb-3 d-1">
+        <label for="exampleInputEmail1" class="form-label">Number 3</label>
+        <input type="number" class="form-check-input " max="9" min="1" id="num3" oninput="store3(this.value)">
+      </div>
+      <div class="mb-3 d-1">
+        <label for="exampleInputPassword1" class="form-label ">Number 4</label>
+        <input type="number" class="form-check-input " max="9" min="1" id="num4" oninput="store4(this.value)">
+      </div>
+
+
+    </form>
+    <button  class="btn btn-primary  w-auto rounded-3 ms-5" onclick="cal()">Submit</button>
+    <!-- <div class="input-group-text mt-5 w-25">
+      <input type="number" id="typeNumber" class="form-control" />
+      <label class="form-label" for="typeNumber"> Number input</label>
+    </div> -->
+
+  </main>
+  <script src="index.js"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
