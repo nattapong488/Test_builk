@@ -31,6 +31,11 @@ sendString.addEventListener("click", function storeArr() {
   if (inputString.value.length > 30) {
     alert("คุณใส่ข้อมูลเกิน");
     inputString.value = "";
+    message.textContent=""
+
+
+    message.style.border = "0px"   
+    styleList.style.listStyle = "none";
   } else {
      message.style.border = "1px solid"
     // style for list
@@ -70,9 +75,10 @@ sendString.addEventListener("click", function storeArr() {
           if (i === 1) {
             countOpen++;
             if (textOpenPosition === "") {
+              
               textOpenPosition += `ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${
-                i + 1
-              }`;
+                i + 1 }`;
+             
             } else {
               textOpenPosition += ` และ ${i + 1}`;
             }
@@ -80,11 +86,14 @@ sendString.addEventListener("click", function storeArr() {
           } else {
             countOpen++;
             if (textOpenPosition === "") {
+              console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i+1}  center ว่าง`);
               textOpenPosition += `ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i+1} `;
+              
             } else {
-              textOpenPosition += ` และ ${i} `;
+              textOpenPosition += ` และ ${i+1} `;
+              console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i+1} center และ`);
             }
-            console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${i+1} fix`);
+            
           }
         }
       }
@@ -101,18 +110,20 @@ sendString.addEventListener("click", function storeArr() {
           textClosePosition += ` และ ${lastIndex + 2}`;
         }
         console.log(`ตำแหน่งที่ต้องใส่วงเล็บปิดคือ ${lastIndex + 2} `);
-      } else if (arr[arr.length - 1] == ")" && arr[lastIndex - 1] == ")") {
-        countOpen++;
-        if (textOpenPosition === "") {
-          textOpenPosition += `ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${
-            lastIndex + 1
-          } `;
-        } else {
-          textOpenPosition += ` และ ${lastIndex + 1} `;
-        }
-
-        console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${lastIndex + 1} `);
       }
+      
+      // else if (arr[arr.length - 1] == ")" && arr[lastIndex - 1] == ")") {     
+      //   countOpen++;
+      //   if (textOpenPosition === "") {
+      //     textOpenPosition += `ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${
+      //       lastIndex + 1
+      //     } `;
+      //   } else {
+      //     textOpenPosition += ` และ ${lastIndex + 1} `;
+      //   }
+
+      //   console.log(`ตำแหน่งที่ต้องใส่วงเล็บเปิดคือ ${lastIndex + 1} `);
+      // }
     }
 
     // Call Function addBracket
