@@ -6,6 +6,8 @@ let num1 = "";
 let num2 = "";
 let num3 = "";
 let num4 = "";
+
+// add value in variable
 function store1(val) {
   num1 = val;
 }
@@ -22,30 +24,44 @@ function store4(val) {
 // let arr1 = oper.map((item) => {
 //   return item;
 // });
-
 // console.log(arr1);
+
 let keep = "";
 let checkInput = false;
 function cal() {
-  let text = "";
-  try {
-    for (let i = 0; i < oper.length; i++) {
-      for (let j = 0; j < oper2.length; j++) {
-        for (let k = 0; k < oper3.length; k++) {
-          text = ` ${num1} ${oper[i]} ${num2}  ${oper[j]} ${num3} ${oper[k]} ${num4}`;
-          let func = eval(text);
-          // console.log(func);
-          if (func === 24) {
-            document.getElementById("message").innerHTML += text + "<br>";
-            checkInput = true;
+  let text = [];
+
+  if (
+    num1 !== num2 &&
+    num1 !== num3 &&
+    num1 !== num4 &&
+    num2 !== num3 &&
+    num2 !== num4 &&
+    num3 !== num4
+  ) {
+    try {
+      for (let i = 0; i < oper.length; i++) {
+        for (let j = 0; j < oper2.length; j++) {
+          for (let k = 0; k < oper3.length; k++) {
+            text = ` ${num1} ${oper[i]} ${num2}  ${oper[j]} ${num3} ${oper[k]} ${num4}`;
+            let func = eval(text);
+            // console.log(func);
+            if (func === 24) {
+              document.getElementById("message").innerHTML = text + "<br>";
+              checkInput = true;
+            }
           }
         }
+        // keep = num1 + oper[i] +num2;
       }
-      // keep = num1 + oper[i] +num2;
+    } catch (error) {
+      document.getElementById("message").innerHTML =
+        "eror Program can't calculate";
     }
-  } catch (error) {
-    document.getElementById("message").innerHTML =
-      "eror Program can't calculate";
+  } else {
+    check = true;
+    reset();
+    alert("ห้ามตัวเลขซ้ำกัน");
   }
 
   function check() {
@@ -60,8 +76,10 @@ function cal() {
     document.getElementById("num2").value = "";
     document.getElementById("num3").value = "";
     document.getElementById("num4").value = "";
-    checkInput = false;
   }
+  // let changeCheck = () => {
+  //   checkInput = false;
+  // };
 
   check();
   reset();
