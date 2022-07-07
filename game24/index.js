@@ -27,7 +27,7 @@ function store4(val) {
 // console.log(arr1);
 
 let keep = "";
-let checkInput = false;
+
 function cal() {
   let text = [];
 
@@ -39,25 +39,28 @@ function cal() {
     num2 !== num4 &&
     num3 !== num4
   ) {
-    try {
-      for (let i = 0; i < oper.length; i++) {
-        for (let j = 0; j < oper2.length; j++) {
-          for (let k = 0; k < oper3.length; k++) {
-            text = ` ${num1} ${oper[i]} ${num2}  ${oper[j]} ${num3} ${oper[k]} ${num4}`;
-            let func = eval(text);
-            // console.log(func);
-            if (func === 24) {
-              document.getElementById("message").innerHTML = text + "<br>";
-              checkInput = true;
-            }
+    var checkInput = false;
+    // try {
+    for (let i = 0; i < oper.length; i++) {
+      for (let j = 0; j < oper2.length; j++) {
+        for (let k = 0; k < oper3.length; k++) {
+          text = ` ${num1} ${oper[i]} ${num2}  ${oper[j]} ${num3} ${oper[k]} ${num4}`;
+          let func = eval(text);
+          // console.log(func);
+          if (func === 24) {
+            document.getElementById("message").innerHTML = text + "<br>";
+            checkInput = true;
           }
         }
-        // keep = num1 + oper[i] +num2;
       }
-    } catch (error) {
-      document.getElementById("message").innerHTML =
-        "eror Program can't calculate";
+      // keep = num1 + oper[i] +num2;
     }
+    // }
+    // catch (error) {
+
+    //   document.getElementById("message").innerHTML =
+    //     "eror Program can't calculate";
+    // }
   } else {
     check = true;
     reset();
@@ -68,6 +71,9 @@ function cal() {
     if (checkInput == false) {
       document.getElementById("message").innerHTML = "";
       alert("ตัวเลขชุดนี้ไม่สามารถทำให้ผลลัพธ์กลายเป็น 24 ได้");
+    }
+    else{
+      
     }
   }
 
